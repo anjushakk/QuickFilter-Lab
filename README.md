@@ -2,7 +2,7 @@
 
 A full-stack web application that applies real-time filters to your photos using a Python/FastAPI backend and a vanilla JavaScript frontend.
 
-*(You should add a screenshot of your live application here!)*
+_(You should add a screenshot of your live application here!)_
 
 ### About The Project
 
@@ -12,31 +12,66 @@ It demonstrates a modern full-stack workflow by separating a powerful **Python b
 
 ### ✨ Features
 
-* **Real-time Filtering:** Apply Grayscale, Sepia, and Invert filters.
-
-* **Dynamic UI:** A clean, dark-mode interface built with vanilla HTML, CSS, and JS.
-
-* **Image Upload:** Modern file selector for any image type.
-
-* **Loading State:** A CSS spinner appears while the backend is processing the image.
-
-* **Download Button:** Instantly download your newly filtered image.
+*   **Real-time Filtering:** Apply Grayscale, Sepia, and Invert filters.
+    
+*   **Dynamic UI:** A clean, dark-mode interface built with vanilla HTML, CSS, and JS.
+    
+*   **Image Upload:** Modern file selector for any image type.
+    
+*   **Loading State:** A CSS spinner appears while the backend is processing the image.
+    
+*   **Download Button:** Instantly download your newly filtered image.
+    
 
 ### 🛠️ Tech Stack
 
-* **Backend:** Python, FastAPI, Uvicorn
-
-* **Image Processing:** Pillow, NumPy
-
-* **Frontend:** Vanilla JavaScript (ES6+), HTML5, CSS3
+*   **Backend:** Python, FastAPI, Uvicorn
+    
+*   **Image Processing:** Pillow, NumPy
+    
+*   **Frontend:** Vanilla JavaScript (ES6+), HTML5, CSS3
+    
 
 ### 🚀 Getting Started
 
 To run this project locally, you will need two terminals open.
 
-#### 1. Backend (Python/FastAPI)
+#### 1\. Backend (Python/FastAPI)
 
-1. Navigate to the `backend` folder:
+1.  Navigate to the `backend` folder:
+    
+        cd backend
+        
+    
+2.  (Optional but recommended) Create and activate a virtual environment:
+    
+        # On Windows
+        python -m venv venv
+        .\venv\Scripts\activate
+        
+        # On macOS/Linux
+        python3 -m venv venv
+        source venv/bin/activate
+        
+    
+3.  Install the required libraries:
+    
+        pip install -r requirements.txt
+        
+    
+4.  Run the FastAPI server:
+    
+        uvicorn main:app --reload
+        
+    
+    The backend will now be running on `http://122.0.0.1:8000`.
+    
 
-   ```bash
-   cd backend
+#### 2\. Frontend (JavaScript)
+
+1.  Navigate to the `frontend` folder.
+    
+2.  Open the `index.html` file directly in your web browser (e.g., by double-clicking it).
+    
+
+That's it! You can now upload an image and apply filters.
