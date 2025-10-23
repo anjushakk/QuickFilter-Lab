@@ -2,7 +2,7 @@
 
 A full-stack web application that applies real-time filters to your photos using a Python/FastAPI backend and a vanilla JavaScript frontend.
 
-_(You should add a screenshot of your live application here!)_
+![Uploading image.png…]()
 
 ### About The Project
 
