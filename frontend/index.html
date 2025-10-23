@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickFilter Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>QuickFilter Lab</h1>
+    <p>Upload an image and apply a real-time filter!</p>
+
+    <div class="controls">
+        <input type="file" id="image-upload" accept="image/*">
+        
+        <div class="filter-buttons">
+            <button id="grayscale-button" class="filter-button">Grayscale</button>
+            <button id="sepia-button" class="filter-button">Sepia</button>
+            <button id="invert-button" class="filter-button">Invert</button>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <div class="image-box">
+            <h3>Original</h3>
+            <img id="original-image" src="" alt="Your original image will appear here">
+        </div>
+        <div class="image-box">
+            <h3>Filtered</h3>
+            <div class="filtered-image-wrapper">
+                <img id="filtered-image" src="" alt="Your filtered image will appear here">
+                <div class="loader" id="loader"></div>
+            </div>
+            <a id="download-link" class="button-download" style="display: none;">Download Image</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

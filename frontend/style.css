@@ -1,0 +1,250 @@
+/* --- Import a clean, modern font --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- Define a color palette --- */
+:root {
+    --bg-dark: #121212;
+    --panel-dark: #1e1e1e;
+    --text-primary: #f5f5f5;
+    --text-secondary: #aaaaaa;
+    --border-color: #333333;
+    --shadow-dark: rgba(0, 0, 0, 0.4);
+    
+    /* Filter Button Colors */
+    --accent-blue: #007bff;
+    --accent-blue-hover: #0056b3;
+    --accent-sepia: #70543E;
+    --accent-sepia-hover: #5a4533;
+    --accent-invert: #8a4ca8;
+    --accent-invert-hover: #693a80;
+    --accent-green: #1e8e3e;
+    --accent-green-hover: #166d2e;
+}
+
+/* --- Smooth entry animations --- */
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Basic body styling --- */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 30px;
+    animation: fadeDown 0.6s ease-out;
+}
+
+/* --- Headers and Text --- */
+h1 {
+    text-align: center;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+p {
+    text-align: center;
+    font-size: 1.1em;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 10px auto 30px;
+}
+
+/* --- Main Controls Panel --- */
+.controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin: 30px auto;
+    padding: 25px;
+    background: var(--panel-dark);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--shadow-dark);
+    max-width: 500px;
+    border: 1px solid var(--border-color);
+    animation: slideUp 0.5s ease-out 0.1s;
+    animation-fill-mode: backwards;
+}
+
+/* --- Style the File Upload Button --- */
+input[type="file"] {
+    color: var(--text-secondary);
+}
+
+input[type="file"]::file-selector-button {
+    background: transparent;
+    color: var(--accent-blue);
+    border: 1px solid var(--accent-blue);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: var(--accent-blue);
+    color: var(--text-primary);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+}
+
+/* --- NEW: Filter Button Group --- */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-button {
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.filter-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Specific button colors */
+#grayscale-button {
+    background: var(--accent-blue);
+}
+#grayscale-button:hover {
+    background: var(--accent-blue-hover);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+#sepia-button {
+    background: var(--accent-sepia);
+}
+#sepia-button:hover {
+    background: var(--accent-sepia-hover);
+    box-shadow: 0 6px 20px rgba(112, 84, 62, 0.3);
+}
+
+#invert-button {
+    background: var(--accent-invert);
+}
+#invert-button:hover {
+    background: var(--accent-invert-hover);
+    box-shadow: 0 6px 20px rgba(138, 76, 168, 0.3);
+}
+
+
+/* --- Image Results Container --- */
+.image-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+.image-box {
+    background: var(--panel-dark);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--shadow-dark);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    width: 400px;
+    min-width: 300px;
+    flex-grow: 1;
+    transition: all 0.3s ease;
+    animation: slideUp 0.5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+.image-container .image-box:first-child { animation-delay: 0.2s; }
+.image-container .image-box:last-child { animation-delay: 0.3s; }
+
+.image-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px var(--shadow-dark);
+}
+
+.image-box h3 {
+    margin-top: 0;
+    color: var(--text-primary);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+/* --- Style the Image Placeholder --- */
+img {
+    max-width: 100%;
+    height: auto;
+    min-height: 250px;
+    background: #2b2b2b;
+    border-radius: 8px;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* --- NEW: Loading Spinner --- */
+.filtered-image-wrapper {
+    position: relative;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin: -25px 0 0 -25px;
+    border: 5px solid var(--border-color);
+    border-top-color: var(--accent-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* --- NEW: Download Button Style --- */
+.button-download {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--accent-green);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 15px;
+}
+
+.button-download:hover {
+    background: var(--accent-green-hover);
+    box-shadow: 0 4px 15px rgba(30, 142, 62, 0.3);
+    transform: translateY(-2px);
+}
